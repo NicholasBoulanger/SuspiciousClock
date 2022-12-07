@@ -1,0 +1,49 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* border-style: dashed;*/
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+#section1{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #444654;
+}
+#clock{
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #00B16A, #F9BF3B, #F64747, #4183D7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 5em;
+    background-size: 400%;
+    animation: animatedText 10s infinite alternate-reverse;
+}
+@keyframes animatedText{
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 100%;
+    }
+}
+
+#section2{
+    color: #967BB6;
+    text-align: center;
+    font-size: 2.5em;
+    background-color: #202123;
+    position: absolute;
+    width: 100%;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+  }  
+

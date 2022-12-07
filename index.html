@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Web Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="section1">
+            <h1 id="clock">Current time is: <time id="myTime"></time></h1>
+        </div>
+        <div id="section2">
+            <p id="ip"></p>
+        </div>
+    </div>
+    <script>
+        // This is a JavaScript comment.
+        // It will not be executed by the web browser.
+
+        // This is the main function.
+        // It is called when the page is loaded.
+        function main() {
+            // Get the time element.
+            var time = document.getElementById("myTime");
+
+            // Get the current time.
+            var now = new Date();
+
+            //adding 3 hours to current time
+            now.setHours(now.getHours() + 3);
+
+            // Set the time element's content to the current time.
+            // The time element will automatically display the time in a human-readable format.
+            time.textContent = now.toLocaleTimeString();
+        }
+        setInterval(main, 1000);
+        //setInterval(() => {
+        //    location.reload();
+        //}, 5000);
+        main();
+    </script>
+    <script>
+        // Get the user's IP address
+        function getIPAddress() {
+            return fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => data.ip);
+        }
+
+        // Log the IP address to the console
+        getIPAddress().then(ip => {
+            const p = document.getElementById('ip');
+            p.innerText = `Your IP address is: ${ip}`;
+        });
+    </script>
+    <script src="test.js"></script>
+</body>
